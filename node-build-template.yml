@@ -1,24 +1,24 @@
-name: Nodejs Build Template
+name: Node.js Build Template
+
 on:
   workflow_call:
     inputs:
       node-version:
         required: true
         type: string
-        description: 'The Nodejs version to use for the build'
+        description: 'The Node.js version to use for the build'
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-     - name: Checkout Code
-       uses: actions/checkout@v4
-     - name: Set up Node.js ${{ inputs.node-version }}
-       uses: actions/setup-node@v4
-       with:
-         node-version: ${{ inputs.node-version }}
-     - name: Install dependencies
-       run: npm install   
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
+      - name: Set up Node.js ${{ inputs.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ inputs.node-version }}
 
-      
+      - name: Install dependencies
+        run: npm install
