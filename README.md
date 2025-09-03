@@ -1,4 +1,3 @@
 # node-template
 fff
-gg
-rr
+g
